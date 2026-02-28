@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracker v1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Habit Tracker v1</p>
+        <h1>14-Day Habit Grid</h1>
+        <p class="subcopy">Track habits across the next 14 days. Click cells to cycle blank, yes, and no.</p>
+      </div>
+      <button id="resetButton" class="button button-danger" type="button">Reset All Data</button>
+    </header>
+
+    <section class="panel progress-panel" aria-labelledby="progressTitle">
+      <div class="progress-copy">
+        <p id="progressTitle" class="panel-label">Overall Completion</p>
+        <p id="progressText" class="progress-text">0%</p>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+    </section>
+
+    <section class="panel controls-panel" aria-labelledby="addHabitTitle">
+      <div class="controls-copy">
+        <p id="addHabitTitle" class="panel-label">Add Habit</p>
+        <p class="panel-subcopy">Create a new row in the tracker.</p>
+      </div>
+      <div class="add-habit-form">
+        <label class="sr-only" for="habitInput">Habit name</label>
+        <input id="habitInput" type="text" maxlength="80" placeholder="Drink water">
+        <button id="addHabitButton" class="button" type="button">Add Habit</button>
+      </div>
+    </section>
+
+    <section class="panel grid-panel" aria-labelledby="gridTitle">
+      <div class="grid-header">
+        <div>
+          <p id="gridTitle" class="panel-label">Habit Matrix</p>
+          <p class="panel-subcopy">Blank cells do not count until a date becomes active.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="habit-table">
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <p id="emptyState" class="empty-state" hidden>No habits yet. Add one to start tracking.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
